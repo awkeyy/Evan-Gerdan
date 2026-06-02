@@ -98,6 +98,53 @@ a, button { cursor: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   LINKEDIN FIXE (gauche, suit le scroll)
+═══════════════════════════════════════════════ */
+.social-fixed {
+  position: fixed;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 300;
+}
+
+.social-btn {
+  width: 52px; height: 52px;
+  background: white;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  text-decoration: none;
+  position: relative; overflow: hidden;
+  z-index: 1;
+}
+
+.social-icon {
+  position: relative;
+  color: #262626;
+  transition: color .5s, transform .5s;
+  z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.social-btn:hover .social-icon {
+  color: white;
+  transform: rotateY(360deg);
+}
+
+.social-btn::before {
+  content: '';
+  position: absolute;
+  top: 100%; left: 0;
+  width: 100%; height: 100%;
+  background: #0077b5;
+  transition: top .5s;
+  z-index: 2;
+}
+
+.social-btn:hover::before { top: 0; }
+
+/* ═══════════════════════════════════════════════
    PROGRESS BAR
 ═══════════════════════════════════════════════ */
 #progress-bar {
@@ -474,7 +521,37 @@ a, button { cursor: none; }
   letter-spacing: -0.04em;
   line-height: .97;
   color: white;
-  overflow: hidden;
+  overflow: visible; /* laisse les pseudo-éléments dépasser */
+  position: relative;
+  cursor: default;
+}
+
+/* ligne du bas — slide de droite à gauche */
+.hn-line::after {
+  content: '';
+  position: absolute;
+  width: 100%; height: 2px;
+  background: linear-gradient(to right, #f0bc0a, rgba(240,188,10,0.35));
+  bottom: -6px; left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+/* ligne du haut — slide de gauche à droite */
+.hn-line::before {
+  content: '';
+  position: absolute;
+  width: 100%; height: 2px;
+  background: linear-gradient(to right, rgba(240,188,10,0.35), #f0bc0a);
+  top: -6px; left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-out;
+}
+
+.hn-line:hover::after,
+.hn-line:hover::before {
+  transform: scaleX(1);
 }
 .hero-portfolio-word {
   font-style: italic;
