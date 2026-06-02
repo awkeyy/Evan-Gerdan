@@ -4,81 +4,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Evan Gerdan — Marketing & Communication</title>
+  <meta name="description" content="Portfolio CV d'Evan Gerdan, spécialiste Marketing Digital & Communication, MSc BAC+5, disponible septembre 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- progress bar -->
+  <!-- PROGRESS BAR -->
   <div id="progress-bar"></div>
 
-  <!-- ── NAV ──────────────────────────────────── -->
-  <nav id="nav">
-    <span class="logo"><span class="logo-dot"></span>EG</span>
-    <ul>
-      <li><a href="#experience">Expériences</a></li>
-      <li><a href="#formation">Formation</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-burger" id="burger">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor"></div>
 
-  <!-- ── HERO ─────────────────────────────────── -->
-  <header id="hero">
-    <div class="hero-bg">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="blob blob-3"></div>
-      <div class="hero-grid"></div>
-    </div>
+  <!-- ── HEADER ──────────────────────────────────── -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-dot"></span>
+        EG
+      </a>
 
-    <div class="hero-inner">
-      <div class="hero-badge" id="badge">
-        <span class="badge-dot"></span>
-        Disponible — Septembre 2026
-      </div>
-      <h1 id="hero-name">Evan<br>Gerdan</h1>
-      <p class="hero-sub" id="hero-sub">
-        Marketing &amp; Communication · MSc Marketing Digital BAC+5
-      </p>
-      <div class="hero-contacts" id="hero-contacts">
-        <span class="hc-chip">📍 Bordeaux</span>
-        <a href="tel:+33617415519" class="hc-chip">📞 06.17.41.55.19</a>
-        <a href="mailto:evan-gerdan@outlook.fr" class="hc-chip">✉ evan-gerdan@outlook.fr</a>
-      </div>
-      <div class="hero-tagline" id="hero-tagline">
-        3 ans d'expérience en alternance et stages dans le marketing digital :
-        création de contenus, SEO opérationnel, emailing, coordination de webinars
-        et gestion de projets. Orienté performance et résultats.
-      </div>
-    </div>
+      <nav class="nav-links">
+        <a href="#experience">Expériences</a>
+        <a href="#formation">Formation</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <div class="scroll-indicator">
-      <div class="si-track"><div class="si-thumb"></div></div>
-      <span>Scroll</span>
+      <a href="mailto:evan-gerdan@outlook.fr" class="nav-cta">
+        <span>Me contacter</span>
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+          <path d="M4.167 10h11.666M10 4.167L15.833 10 10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="#experience">Expériences</a>
+      <a href="#formation">Formation</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="mailto:evan-gerdan@outlook.fr" class="mobile-cta">Me contacter →</a>
+  </div>
+
+  <!-- ── HERO ─────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <!-- Gros titre centré -->
+    <div class="hero-title-block">
+      <h1 class="hero-headline">
+        <span class="hn-line">Evan Gerdan</span>
+        <span class="hn-line hero-portfolio-word">Portfolio.</span>
+      </h1>
+    </div>
+
+    <!-- Bloc d'infos centré sous le titre -->
+    <div class="hero-info-center">
+
+      <p class="hi-desc">
+        Marketing &amp; Communication, MSc BAC+5.<br>
+        3 ans d'expérience en alternances et stages —<br>
+        SEO, emailing, contenu, orienté performance.
+      </p>
+
+      <div class="hi-meta">
+        <span class="hi-loc">Bordeaux</span>
+        <span class="hi-sep">·</span>
+        <a href="tel:+33617415519" class="hi-link">06 17 41 55 19</a>
+        <span class="hi-sep">·</span>
+        <a href="mailto:evan-gerdan@outlook.fr" class="hi-link">evan-gerdan@outlook.fr</a>
+      </div>
+
+      <a href="#experience" class="hi-cta">
+        <span class="hi-cta-text">Voir mon parcours</span>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="hi-cta-arrow">
+          <path d="M4.167 10h11.666M10 4.167L15.833 10 10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+    </div>
+
+    <div class="hero-foot">
+      <div></div>
+      <div class="scroll-indicator">
+        <div class="si-mouse"><div class="si-wheel"></div></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MARQUEE ────────────────────────────────── -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Marketing Digital</span><span class="msep">·</span>
+      <span>SEO Opérationnel</span><span class="msep">·</span>
+      <span>Emailing</span><span class="msep">·</span>
+      <span>Lead Generation</span><span class="msep">·</span>
+      <span>Brevo</span><span class="msep">·</span>
+      <span>HubSpot</span><span class="msep">·</span>
+      <span>Canva</span><span class="msep">·</span>
+      <span>Figma</span><span class="msep">·</span>
+      <span>Livestorm</span><span class="msep">·</span>
+      <span>A/B Testing</span><span class="msep">·</span>
+      <span>CRM</span><span class="msep">·</span>
+      <span>Reporting</span><span class="msep">·</span>
+      <span>Marketing Digital</span><span class="msep">·</span>
+      <span>SEO Opérationnel</span><span class="msep">·</span>
+      <span>Emailing</span><span class="msep">·</span>
+      <span>Lead Generation</span><span class="msep">·</span>
+      <span>Brevo</span><span class="msep">·</span>
+      <span>HubSpot</span><span class="msep">·</span>
+      <span>Canva</span><span class="msep">·</span>
+      <span>Figma</span><span class="msep">·</span>
+      <span>Livestorm</span><span class="msep">·</span>
+      <span>A/B Testing</span><span class="msep">·</span>
+      <span>CRM</span><span class="msep">·</span>
+      <span>Reporting</span><span class="msep">·</span>
+    </div>
+  </div>
+
   <!-- ── STATS ─────────────────────────────────── -->
   <section class="stats-section" id="stats">
-    <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-num"><span class="counter" data-target="3">0</span><sup>+</sup></div>
-        <div class="stat-label">Années d'expérience</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num"><span class="counter" data-target="4">0</span></div>
-        <div class="stat-label">Entreprises</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num"><span class="counter" data-target="1800">0</span><sup>+</sup></div>
-        <div class="stat-label">Images SEO optimisées</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num"><span class="counter" data-target="6">0</span></div>
-        <div class="stat-label">Outils maîtrisés</div>
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num"><span class="counter" data-target="3">0</span>+</div>
+          <div class="stat-label">Années d'expérience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span class="counter" data-target="4">0</span></div>
+          <div class="stat-label">Entreprises</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span class="counter" data-target="1800">0</span>+</div>
+          <div class="stat-label">Images SEO optimisées</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span class="counter" data-target="6">0</span></div>
+          <div class="stat-label">Outils maîtrisés</div>
+        </div>
       </div>
     </div>
   </section>
@@ -87,244 +164,232 @@
   <main>
 
     <!-- EXPÉRIENCES -->
-    <section id="experience">
-      <div class="section-header">
-        <div class="section-icon">💼</div>
-        <div class="section-title-wrap">
+    <section id="experience" class="section-dark">
+      <div class="container">
+        <div class="section-hd">
           <span class="section-label">Expériences professionnelles</span>
-          <div class="section-line"></div>
+          <h2 class="section-heading">
+            <span data-word>3 ans</span> <span data-word>de</span> <span data-word>terrain,</span><br>
+            <span data-word>orienté</span> <span data-word>résultats.</span>
+          </h2>
         </div>
-      </div>
 
-      <div class="timeline">
-        <div class="tl-track"><div class="tl-fill"></div></div>
+        <div class="timeline">
+          <div class="tl-line"><div class="tl-progress"></div></div>
 
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <div class="exp-company">Arago Consulting</div>
-                <div class="exp-role">Marketing &amp; Communication Assistant · Bordeaux</div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="exp-card">
+              <div class="exp-meta">
+                <div class="exp-meta-left">
+                  <div class="exp-company">Arago Consulting</div>
+                  <div class="exp-role">Marketing &amp; Communication Assistant · Bordeaux</div>
+                </div>
+                <div class="exp-meta-right">
+                  <span class="exp-period">Sept. 2025 → Sept. 2026</span>
+                  <span class="exp-badge alt">Alternance</span>
+                </div>
               </div>
-              <div class="exp-period">Sept. 2025 → Sept. 2026</div>
+              <ul class="exp-list">
+                <li>Création et amélioration de contenus marketing (pages solutions, éditoriaux, « Pourquoi choisir »)</li>
+                <li>Maintenance et mise à jour du site Arago : liens, boutons, validation multilingue</li>
+                <li>SEO opérationnel : audits, crawl complet, optimisation de ~1 800 balises alt</li>
+                <li>Génération de leads : plans d'entrée vers un questionnaire de recrutement</li>
+                <li>Coordination de webinars via Livestorm : préparation, dry run, synthèse</li>
+                <li>Coordination quotidienne avec l'équipe marketing en réunions DSA</li>
+              </ul>
             </div>
-            <span class="exp-tag tag-alt">⚡ Alternance</span>
-            <ul class="exp-bullets">
-              <li>Création et amélioration de contenus marketing (pages solutions, éditoriaux, « Pourquoi choisir »)</li>
-              <li>Maintenance et mise à jour du site Arago : liens, boutons, validation multilingue</li>
-              <li>SEO opérationnel : audits, crawl complet, optimisation de ~1 800 balises alt</li>
-              <li>Génération de leads : plans d'entrée vers un questionnaire de recrutement</li>
-              <li>Coordination de webinars via Livestorm : préparation, dry run, synthèse</li>
-              <li>Coordination quotidienne avec l'équipe marketing en réunions DSA</li>
-            </ul>
           </div>
-        </div>
 
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <div class="exp-company">DSA · DriverServiceAgency</div>
-                <div class="exp-role">Assistant Marketing · Bordeaux</div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="exp-card">
+              <div class="exp-meta">
+                <div class="exp-meta-left">
+                  <div class="exp-company">DSA · DriverServiceAgency</div>
+                  <div class="exp-role">Assistant Marketing · Bordeaux</div>
+                </div>
+                <div class="exp-meta-right">
+                  <span class="exp-period">Sept. 2024 → Juil. 2025</span>
+                  <span class="exp-badge alt">Alternance</span>
+                </div>
               </div>
-              <div class="exp-period">Sept. 2024 → Juil. 2025</div>
+              <ul class="exp-list">
+                <li>Animation des réseaux sociaux et rédaction d'articles SEO pour blog et LinkedIn</li>
+                <li>Newsletters Brevo : segmentation, automation, A/B testing, analyse taux d'ouverture</li>
+                <li>Participation au choix et déploiement de solutions IT et CRM</li>
+                <li>Reporting mensuel (web, réseaux, CRM) et veille concurrentielle — marque WikiTour</li>
+              </ul>
             </div>
-            <span class="exp-tag tag-alt">⚡ Alternance</span>
-            <ul class="exp-bullets">
-              <li>Animation des réseaux sociaux et rédaction d'articles SEO pour blog et LinkedIn</li>
-              <li>Newsletters Brevo : segmentation, automation, A/B testing, analyse taux d'ouverture</li>
-              <li>Participation au choix et déploiement de solutions IT et CRM</li>
-              <li>Reporting mensuel (web, réseaux, CRM) et veille concurrentielle — marque WikiTour</li>
-            </ul>
           </div>
-        </div>
 
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <div class="exp-company">SonerPièces</div>
-                <div class="exp-role">Assistant Marketing et Commercial · Bordeaux</div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="exp-card">
+              <div class="exp-meta">
+                <div class="exp-meta-left">
+                  <div class="exp-company">SonerPièces</div>
+                  <div class="exp-role">Assistant Marketing et Commercial · Bordeaux</div>
+                </div>
+                <div class="exp-meta-right">
+                  <span class="exp-period">Fév. → Juil. 2024</span>
+                  <span class="exp-badge stage">Stage</span>
+                </div>
               </div>
-              <div class="exp-period">Fév. → Juil. 2024</div>
+              <ul class="exp-list">
+                <li>Création de contenus vidéo courts (Reels, TikTok)</li>
+                <li>Élaboration et mise en œuvre d'une stratégie digitale orientée performance</li>
+                <li>Analyse hebdomadaire du trafic, des ventes et du comportement client</li>
+                <li>Contribution à l'optimisation du site et à la promotion des offres commerciales</li>
+              </ul>
             </div>
-            <span class="exp-tag tag-stage">📌 Stage</span>
-            <ul class="exp-bullets">
-              <li>Création de contenus vidéo courts (Reels, TikTok) — stratégie digitale performance</li>
-              <li>Analyse hebdomadaire du trafic, ventes, comportement client et optimisation site</li>
-            </ul>
           </div>
-        </div>
 
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <div class="exp-company">NDImprovement</div>
-                <div class="exp-role">Assistant Marketing &amp; Business Development · Bordeaux</div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="exp-card">
+              <div class="exp-meta">
+                <div class="exp-meta-left">
+                  <div class="exp-company">NDImprovement</div>
+                  <div class="exp-role">Assistant Marketing &amp; Business Development · Bordeaux</div>
+                </div>
+                <div class="exp-meta-right">
+                  <span class="exp-period">Mai → Juil. 2023</span>
+                  <span class="exp-badge stage">Stage</span>
+                </div>
               </div>
-              <div class="exp-period">Mai → Juil. 2023</div>
+              <ul class="exp-list">
+                <li>Déploiement de tunnels de vente (lead magnet, automation, emails de relance)</li>
+                <li>Création de contenus visuels et publications sur LinkedIn et Instagram</li>
+                <li>Réalisation d'une étude de marché et benchmark concurrentiel</li>
+                <li>Prospection BtoB et relances commerciales personnalisées</li>
+              </ul>
             </div>
-            <span class="exp-tag tag-stage">📌 Stage</span>
-            <ul class="exp-bullets">
-              <li>Déploiement de tunnels de vente et création de contenus visuels</li>
-              <li>Étude de marché et prospection BtoB</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FORMATION -->
-    <section id="formation">
-      <div class="section-header">
-        <div class="section-icon">🎓</div>
-        <div class="section-title-wrap">
-          <span class="section-label">Formation</span>
-          <div class="section-line"></div>
+    <section id="formation" class="section-light">
+      <div class="container">
+        <div class="section-hd">
+          <span class="section-label on-light">Formation</span>
+          <h2 class="section-heading on-light">
+            <span data-word>INSEEC</span> <span data-word>Business</span> <span data-word>School,</span><br>
+            <span data-word>Bordeaux.</span>
+          </h2>
         </div>
-      </div>
-      <div class="edu-list">
-        <div class="edu-card">
-          <div class="edu-icon">🏆</div>
-          <div class="edu-body">
-            <div class="edu-degree">MSc Marketing Digital &amp; E-business</div>
-            <div class="edu-school">INSEEC Business School</div>
+        <div class="edu-list">
+          <div class="edu-card">
+            <div class="edu-year">2024 — 2026</div>
+            <div class="edu-body">
+              <div class="edu-degree">MSc Marketing Digital &amp; E-business</div>
+              <div class="edu-school">INSEEC Business School · Bordeaux</div>
+            </div>
+            <span class="edu-badge">BAC+5</span>
           </div>
-          <div class="edu-period">2024 → 2026</div>
-        </div>
-        <div class="edu-card">
-          <div class="edu-icon">📘</div>
-          <div class="edu-body">
-            <div class="edu-degree">Bachelor Marketing Digital</div>
-            <div class="edu-school">INSEEC Business School</div>
+          <div class="edu-card">
+            <div class="edu-year">2023 — 2024</div>
+            <div class="edu-body">
+              <div class="edu-degree">Bachelor Marketing Digital</div>
+              <div class="edu-school">INSEEC Business School · Bordeaux</div>
+            </div>
+            <span class="edu-badge">BAC+4</span>
           </div>
-          <div class="edu-period">2023 → 2024</div>
-        </div>
-        <div class="edu-card">
-          <div class="edu-icon">📗</div>
-          <div class="edu-body">
-            <div class="edu-degree">Bachelor Business Développement</div>
-            <div class="edu-school">INSEEC Business School</div>
+          <div class="edu-card">
+            <div class="edu-year">2022 — 2023</div>
+            <div class="edu-body">
+              <div class="edu-degree">Bachelor Business Développement</div>
+              <div class="edu-school">INSEEC Business School · Bordeaux</div>
+            </div>
+            <span class="edu-badge">BAC+3</span>
           </div>
-          <div class="edu-period">2022 → 2023</div>
         </div>
       </div>
     </section>
 
     <!-- COMPÉTENCES -->
-    <section id="competences">
-      <div class="section-header">
-        <div class="section-icon">⚡</div>
-        <div class="section-title-wrap">
+    <section id="competences" class="section-dark">
+      <div class="container">
+        <div class="section-hd">
           <span class="section-label">Compétences</span>
-          <div class="section-line"></div>
+          <h2 class="section-heading">
+            <span data-word>Des</span> <span data-word>outils</span> <span data-word>maîtrisés,</span><br>
+            <span data-word>des</span> <span data-word>résultats</span> <span data-word>mesurés.</span>
+          </h2>
         </div>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-glow"></div>
-          <div class="skill-top">
-            <div class="skill-icon-wrap">📱</div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">📱</div>
             <div class="skill-cat">Marketing Digital</div>
+            <div class="skill-desc">Stratégie de contenu, social media, lead generation, tunnels de conversion</div>
+            <div class="skill-tags"><span>Content</span><span>Social Media</span><span>Lead Gen</span></div>
           </div>
-          <div class="skill-items">Stratégie de contenu, social media, lead generation, tunnels de conversion</div>
-          <div class="skill-tags">
-            <span class="stag">Content</span><span class="stag">Social Media</span><span class="stag">Lead Gen</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-glow"></div>
-          <div class="skill-top">
-            <div class="skill-icon-wrap">🔍</div>
+          <div class="skill-card">
+            <div class="skill-icon">🔍</div>
             <div class="skill-cat">SEO</div>
+            <div class="skill-desc">Audits, crawl, optimisation des balises, analyse de trafic</div>
+            <div class="skill-tags"><span>Audit</span><span>Crawl</span><span>Balises Alt</span></div>
           </div>
-          <div class="skill-items">Audits, crawl, optimisation des balises, analyse de trafic</div>
-          <div class="skill-tags">
-            <span class="stag">Audit</span><span class="stag">Crawl</span><span class="stag">Balises</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-glow"></div>
-          <div class="skill-top">
-            <div class="skill-icon-wrap">✉️</div>
+          <div class="skill-card">
+            <div class="skill-icon">✉️</div>
             <div class="skill-cat">Emailing</div>
+            <div class="skill-desc">Brevo, HubSpot, segmentation, automation, A/B testing</div>
+            <div class="skill-tags"><span>Brevo</span><span>HubSpot</span><span>A/B Test</span></div>
           </div>
-          <div class="skill-items">Brevo, HubSpot, segmentation, automation, A/B testing</div>
-          <div class="skill-tags">
-            <span class="stag">Brevo</span><span class="stag">HubSpot</span><span class="stag">A/B Test</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-glow"></div>
-          <div class="skill-top">
-            <div class="skill-icon-wrap">🎨</div>
+          <div class="skill-card">
+            <div class="skill-icon">🎨</div>
             <div class="skill-cat">Outils Créatifs</div>
+            <div class="skill-desc">Canva, Figma, CapCut, Photoshop — création visuelle et motion</div>
+            <div class="skill-tags"><span>Canva</span><span>Figma</span><span>CapCut</span></div>
           </div>
-          <div class="skill-items">Canva, Figma, CapCut, Photoshop</div>
-          <div class="skill-tags">
-            <span class="stag">Canva</span><span class="stag">Figma</span><span class="stag">CapCut</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-glow"></div>
-          <div class="skill-top">
-            <div class="skill-icon-wrap">🎙️</div>
+          <div class="skill-card">
+            <div class="skill-icon">🎙️</div>
             <div class="skill-cat">Webinars &amp; Coordination</div>
+            <div class="skill-desc">Livestorm, gestion de projets, reporting, réunions DSA</div>
+            <div class="skill-tags"><span>Livestorm</span><span>Projets</span><span>DSA</span></div>
           </div>
-          <div class="skill-items">Livestorm, gestion de projets, reporting</div>
-          <div class="skill-tags">
-            <span class="stag">Livestorm</span><span class="stag">Projets</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-glow"></div>
-          <div class="skill-top">
-            <div class="skill-icon-wrap">⚙️</div>
+          <div class="skill-card">
+            <div class="skill-icon">⚙️</div>
             <div class="skill-cat">CRM &amp; IT</div>
-          </div>
-          <div class="skill-items">Déploiement de solutions CRM, suivi des performances</div>
-          <div class="skill-tags">
-            <span class="stag">CRM</span><span class="stag">Reporting</span><span class="stag">KPIs</span>
+            <div class="skill-desc">Déploiement de solutions CRM, suivi des performances, KPIs</div>
+            <div class="skill-tags"><span>CRM</span><span>Reporting</span><span>KPIs</span></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- INTÉRÊTS -->
-    <section id="interets">
-      <div class="section-header">
-        <div class="section-icon">🌍</div>
-        <div class="section-title-wrap">
-          <span class="section-label">Centres d'intérêt</span>
-          <div class="section-line"></div>
+    <section id="interets" class="section-interests">
+      <div class="container interests-row">
+        <span class="section-label on-light">Centres d'intérêt</span>
+        <div class="interests-pills">
+          <span class="interest-pill">Marketing digital &amp; IA</span>
+          <span class="interest-pill">Photographie</span>
+          <span class="interest-pill">Voyages en Indonésie</span>
         </div>
-      </div>
-      <div class="interests">
-        <span class="interest-tag">🤖 Marketing digital &amp; IA</span>
-        <span class="interest-tag">📷 Photographie</span>
-        <span class="interest-tag">✈️ Voyages en Indonésie</span>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <div class="contact-card">
-        <div class="contact-bg-orbs">
-          <div class="orb orb-1"></div>
-          <div class="orb orb-2"></div>
-        </div>
+    <section id="contact" class="contact-section">
+      <div class="container">
         <div class="contact-inner">
-          <div class="contact-emoji">🚀</div>
-          <h2>Travaillons ensemble</h2>
-          <p>Disponible pour un CDI/CDD à partir de <strong>septembre 2026</strong>.<br>N'hésitez pas à me contacter !</p>
+          <span class="section-label">Travaillons ensemble</span>
+          <h2 class="contact-heading">
+            <span data-word>Disponible</span> <span data-word>pour</span> <span data-word>un</span> <span data-word>CDI</span><br>
+            <span data-word>dès</span> <span data-word>septembre</span> <span data-word>2026.</span>
+          </h2>
+          <p class="contact-sub">N'hésitez pas à me contacter directement.</p>
           <div class="contact-btns">
-            <a href="mailto:evan-gerdan@outlook.fr" class="btn-primary">✉ evan-gerdan@outlook.fr</a>
-            <a href="tel:+33617415519" class="btn-secondary">📞 06.17.41.55.19</a>
+            <a href="mailto:evan-gerdan@outlook.fr" class="btn-primary-c">
+              <span>evan-gerdan@outlook.fr</span>
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                <path d="M4.167 10h11.666M10 4.167L15.833 10 10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="tel:+33617415519" class="btn-ghost-c">06.17.41.55.19</a>
           </div>
         </div>
       </div>
@@ -334,14 +399,18 @@
 
   <!-- ── FOOTER ─────────────────────────────────── -->
   <footer>
-    <p>© 2026 Evan Gerdan · Bordeaux ·
+    <div class="footer-inner">
+      <a href="#" class="logo footer-logo">
+        <span class="logo-dot"></span>EG
+      </a>
+      <p>© 2026 Evan Gerdan · Bordeaux</p>
       <a href="mailto:evan-gerdan@outlook.fr">evan-gerdan@outlook.fr</a>
-    </p>
+    </div>
   </footer>
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
