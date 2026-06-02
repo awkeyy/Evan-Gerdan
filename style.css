@@ -35,6 +35,69 @@ body {
 a, button { cursor: none; }
 
 /* ═══════════════════════════════════════════════
+   BACKGROUND ORBS — dégradé animé continu
+═══════════════════════════════════════════════ */
+.site-orbs {
+  position: absolute; inset: 0;
+  z-index: 0; pointer-events: none;
+  overflow: hidden;
+}
+.so {
+  position: absolute; border-radius: 50%;
+  filter: blur(90px); will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.so-1 {
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(240,188,10,0.18) 0%, transparent 70%);
+  top: -120px; left: -100px;
+  animation: so1 50s ease-in-out infinite alternate;
+}
+.so-2 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(240,188,10,0.14) 0%, transparent 70%);
+  bottom: -80px; right: -60px;
+  animation: so2 38s ease-in-out infinite alternate;
+}
+.so-3 {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  top: 35%; left: 30%;
+  animation: so3 44s ease-in-out infinite alternate;
+}
+.so-4 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(240,188,10,0.1) 0%, transparent 70%);
+  top: 55%; left: -40px;
+  animation: so4 32s ease-in-out infinite alternate;
+}
+
+@keyframes so1 {
+  0%   { transform: translate(0,    0); }
+  33%  { transform: translate(300px, 200px); }
+  66%  { transform: translate(150px, 500px); }
+  100% { transform: translate(420px, 300px); }
+}
+@keyframes so2 {
+  0%   { transform: translate(0,    0); }
+  33%  { transform: translate(-250px, -180px); }
+  66%  { transform: translate(-400px, -80px); }
+  100% { transform: translate(-180px, -320px); }
+}
+@keyframes so3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  40%  { transform: translate(-180px, 200px) scale(1.25); }
+  70%  { transform: translate(200px, -150px) scale(0.85); }
+  100% { transform: translate(-100px, 100px) scale(1.1); }
+}
+@keyframes so4 {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(220px, -250px); }
+  100% { transform: translate(100px, -400px); }
+}
+
+/* ═══════════════════════════════════════════════
    PROGRESS BAR
 ═══════════════════════════════════════════════ */
 #progress-bar {
