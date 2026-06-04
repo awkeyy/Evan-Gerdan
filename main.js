@@ -432,10 +432,30 @@ gsap.to('.edu-card', {
 /* ─────────────────────────────────────────────────────────
    14. SKILL CARDS — staggered reveal + 3D tilt
 ───────────────────────────────────────────────────────── */
-gsap.to('.skill-card', {
-  opacity: 1, y: 0, stagger: .08, duration: .7, ease: 'back.out(1.4)',
-  scrollTrigger: { trigger: '.skills-grid', start: 'top 80%', once: true }
-});
+/* ─────────────────────────────────────────────────────────
+   14b. SKILLS — horizontal scroll GSAP
+───────────────────────────────────────────────────────── */
+const skillsTrack = document.querySelector('.skills-track');
+if (skillsTrack && !isTouchDevice) {
+  gsap.to(skillsTrack, {
+    x: () => -(skillsTrack.scrollWidth - window.innerWidth + 160),
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#competences',
+      pin: true,
+      scrub: 1.2,
+      start: 'top top',
+      end: () => '+=' + (skillsTrack.scrollWidth - window.innerWidth + 160),
+      invalidateOnRefresh: true,
+    }
+  });
+}
+
+/* Mobile: free horizontal scroll natif */
+if (isTouchDevice && skillsTrack) {
+  skillsTrack.parentElement.style.overflowX = 'auto';
+  skillsTrack.parentElement.style.webkitOverflowScrolling = 'touch';
+}
 
 if (!isTouchDevice) {
   document.querySelectorAll('.skill-card').forEach(card => {
@@ -444,7 +464,7 @@ if (!isTouchDevice) {
       const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
       const dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
       gsap.to(card, {
-        rotateY: dx * 7, rotateX: -dy * 7,
+        rotateY: dx * 5, rotateX: -dy * 5,
         transformPerspective: 900,
         duration: .3, ease: 'power1.out',
       });
