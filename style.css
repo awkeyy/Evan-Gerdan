@@ -1254,3 +1254,31 @@ footer a:hover { color: rgba(255,255,255,.7); }
   display: flex;
   align-items: center;
 }
+
+/* ═══════════════════════════════════════════════
+   OPTIMISATIONS MOBILE
+═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Désactive les oiseaux */
+  .bird-container { display: none; }
+
+  /* Désactive les orbs (trop lourds) */
+  .site-orbs { display: none; }
+
+  /* Désactive l'animation logo bounce sur mobile */
+  .logo .letter-target { animation: none; }
+  .logo .ball { animation: none; display: none; }
+
+  /* Hero : background fixe plutôt que scroll (évite recalc) */
+  #hero {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  /* Réduit les animations GSAP stagger (moins de repaints) */
+  .stat-item, .edu-card, .skill-card, .interest-pill {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
