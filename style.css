@@ -989,7 +989,7 @@ a, button { cursor: none; }
   font-variation-settings: "wght" 800;
 }
 .contact-sub {
-  font-size: 1.05rem; color: rgba(255,255,255,.45);
+  font-size: 1.05rem; color: rgba(255,255,255,.9);
   margin-bottom: 2.8rem;
 }
 .contact-btns { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -1017,16 +1017,16 @@ a, button { cursor: none; }
 
 .btn-ghost-c {
   display: inline-flex; align-items: center;
-  background: transparent; color: rgba(255,255,255,.65);
+  background: transparent; color: rgba(255,255,255,.95);
   font-size: .9rem; font-weight: 600;
   padding: .95rem 2.2rem; border-radius: 100px;
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.6);
   text-decoration: none;
   transition: border-color .25s, color .25s, background .25s;
 }
 .btn-ghost-c:hover {
-  border-color: rgba(255,255,255,.4); color: white;
-  background: rgba(255,255,255,.05);
+  border-color: white; color: white;
+  background: rgba(255,255,255,.1);
 }
 
 /* ═══════════════════════════════════════════════
