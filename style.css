@@ -1072,3 +1072,65 @@ footer a:hover { color: rgba(255,255,255,.7); }
   .exp-meta-right { text-align: left; }
   .interests-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
 }
+
+
+/* ═══════════════════════════════════════════════
+   LOGO ANIMÉ — bounce rocket
+═══════════════════════════════════════════════ */
+.logo-title {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1cap;
+  text-transform: uppercase;
+  font-family: "Libre Franklin", sans-serif;
+  color: var(--white);
+}
+
+.logo .bounce-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes letter-bounce {
+  0%  { transform: scaleX(1.2) scaleY(0.75); }
+  50% { transform: scaleX(1)   scaleY(1);    }
+}
+
+.logo .letter-target {
+  display: inline-block;
+  will-change: transform;
+  animation: letter-bounce 0.35s ease both infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes bounce {
+  from { translate: -50% 120%; }
+  to   { translate: -50% 0;    }
+}
+
+@keyframes rotate {
+  from { rotate: 0deg;   }
+  to   { rotate: 360deg; }
+}
+
+.logo .ball {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  --size: 13px;
+  width: var(--size);
+  height: var(--size);
+  font-size: calc(var(--size) * 0.8);
+  margin-bottom: calc(var(--size) * 0.1);
+  will-change: transform;
+  animation: rotate 4s linear infinite,
+             bounce 0.35s ease-out both infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Emoji", sans-serif;
+}
