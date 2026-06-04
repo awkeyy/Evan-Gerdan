@@ -716,7 +716,7 @@ a, button { cursor: none; }
   margin-bottom: 1.2rem;
   opacity: 0; transform: translateY(12px);
 }
-.section-label.on-light { color: var(--white); }
+.section-label.on-light { color: var(--black); }
 
 .section-heading {
   font-size: clamp(2.2rem, 4.5vw, 4rem);
