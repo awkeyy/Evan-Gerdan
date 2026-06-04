@@ -489,3 +489,37 @@ if (marqueeTrack) {
    18. REFRESH on load
 ───────────────────────────────────────────────────────── */
 window.addEventListener('load', () => ScrollTrigger.refresh());
+
+
+/* ── SON AMBIANT ──────────────────────────────── */
+(function() {
+  const btn   = document.getElementById('sound-btn');
+  const audio = document.getElementById('ambient-audio');
+  const label = document.getElementById('sound-label');
+  const iconOn  = document.getElementById('icon-sound-on');
+  const iconOff = document.getElementById('icon-sound-off');
+
+  if (!btn || !audio) return;
+
+  audio.volume = 0.4;
+  let playing = false;
+
+  btn.addEventListener('click', function() {
+    if (!playing) {
+      audio.play().then(() => {
+        playing = true;
+        label.textContent = 'Son ambiant activé';
+        iconOn.style.display  = 'block';
+        iconOff.style.display = 'none';
+        btn.classList.add('playing');
+      }).catch(() => {});
+    } else {
+      audio.pause();
+      playing = false;
+      label.textContent = 'Activez le son ambiant';
+      iconOn.style.display  = 'none';
+      iconOff.style.display = 'block';
+      btn.classList.remove('playing');
+    }
+  });
+})();
