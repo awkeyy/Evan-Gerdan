@@ -888,8 +888,15 @@ a, button { cursor: none; }
 
 .skills-section-h .container {
   padding-top: 4.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.2rem;
   flex-shrink: 0;
+}
+.skills-section-h .section-hd {
+  margin-bottom: 0.5rem;
+}
+.skills-section-h .section-heading {
+  margin-bottom: 0;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
 }
 
 .skills-hscroll {
