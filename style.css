@@ -710,13 +710,13 @@ a, button { cursor: none; }
 }
 .section-label {
   display: block;
-  font-size: .7rem; font-weight: 700;
+  font-size: .95rem; font-weight: 700;
   letter-spacing: .18em; text-transform: uppercase;
-  color: var(--text-dimmed);
+  color: var(--white);
   margin-bottom: 1.2rem;
   opacity: 0; transform: translateY(12px);
 }
-.section-label.on-light { color: #bbb; }
+.section-label.on-light { color: var(--white); }
 
 .section-heading {
   font-size: clamp(2.2rem, 4.5vw, 4rem);
