@@ -1207,3 +1207,50 @@ footer a:hover { color: rgba(255,255,255,.7); }
   51%  { transform: translateY(0vh)    translateX(110vw) scale(0.45);      }
   100% { transform: translateY(0vh)    translateX(110vw) scale(0.45);      }
 }
+
+/* ═══════════════════════════════════════════════
+   BOUTON SON AMBIANT
+═══════════════════════════════════════════════ */
+.sound-btn-wrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.sound-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .55rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 100px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: none;
+  transition: background .3s, border-color .3s, transform .2s;
+}
+
+.sound-btn:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.6);
+  transform: scale(1.04);
+}
+
+.sound-btn.playing {
+  border-color: var(--accent);
+  background: rgba(240,188,10,0.12);
+  color: var(--accent);
+}
+
+.sound-icon {
+  display: flex;
+  align-items: center;
+}
