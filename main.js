@@ -264,43 +264,53 @@ document.querySelectorAll('.hero-tab').forEach(tab => {
    6. HERO ENTRANCE — lettre par lettre
 ───────────────────────────────────────────────────────── */
 
-/* Split chaque .hn-line en spans de caractères */
-document.querySelectorAll('.hn-line').forEach(line => {
-  const text = line.textContent;
-  line.innerHTML = text.split('').map(ch =>
-    `<span class="char" style="display:inline-block">${ch === ' ' ? '&nbsp;' : ch}</span>`
-  ).join('');
-});
-
+/* Split chaque .hn-line en spans de caractères — desktop seulement */
 const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: .05 });
 
-heroTl
-  .from('.hero-headline .char', {
-    y: 70, opacity: 0,
-    stagger: { each: 0.06, from: 'start' },
-    duration: 0.45,
-    ease: 'power2.out',
-  })
-  .from('.hi-desc',     { y: 18, opacity: 0, duration: .55 }, '-=.2')
-  .from('.hi-meta',     { y: 12, opacity: 0, duration: .45 }, '-=.3')
-  .from('.hi-cta',      { y: 12, opacity: 0, duration: .4 }, '-=.25')
-  .from('.scroll-indicator', { opacity: 0, duration: .5 }, '-=.2');
+if (!isTouchDevice) {
+  document.querySelectorAll('.hn-line').forEach(line => {
+    const text = line.textContent;
+    line.innerHTML = text.split('').map(ch =>
+      `<span class="char" style="display:inline-block">${ch === ' ' ? '&nbsp;' : ch}</span>`
+    ).join('');
+  });
+  heroTl
+    .from('.hero-headline .char', {
+      y: 70, opacity: 0,
+      stagger: { each: 0.06, from: 'start' },
+      duration: 0.45,
+      ease: 'power2.out',
+    })
+    .from('.hi-desc',     { y: 18, opacity: 0, duration: .55 }, '-=.2')
+    .from('.hi-meta',     { y: 12, opacity: 0, duration: .45 }, '-=.3')
+    .from('.hi-cta',      { y: 12, opacity: 0, duration: .4 }, '-=.25')
+    .from('.scroll-indicator', { opacity: 0, duration: .5 }, '-=.2');
+} else {
+  /* Mobile : simple fade rapide */
+  heroTl
+    .from('.hero-headline', { opacity: 0, y: 20, duration: .4, ease: 'power2.out' })
+    .from('.hi-desc',       { opacity: 0, y: 12, duration: .35 }, '-=.15')
+    .from('.hi-meta',       { opacity: 0, duration: .3 }, '-=.1')
+    .from('.hi-cta',        { opacity: 0, duration: .3 }, '-=.1');
+}
 
 /* ─────────────────────────────────────────────────────────
-   7. HERO PARALLAX on scroll
+   7. HERO PARALLAX on scroll — desktop only
 ───────────────────────────────────────────────────────── */
-gsap.to('.hero-headline', {
-  y: 60, ease: 'none',
-  scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1.5 }
-});
-gsap.to('.hero-info-center', {
-  y: 40, ease: 'none',
-  scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1 }
-});
-gsap.to('.hero-grid', {
-  y: -60, ease: 'none',
-  scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 2 }
-});
+if (!isTouchDevice) {
+  gsap.to('.hero-headline', {
+    y: 60, ease: 'none',
+    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1.5 }
+  });
+  gsap.to('.hero-info-center', {
+    y: 40, ease: 'none',
+    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1 }
+  });
+  gsap.to('.hero-grid', {
+    y: -60, ease: 'none',
+    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 2 }
+  });
+}
 
 /* ─────────────────────────────────────────────────────────
    8. SCROLL INDICATOR — fade on first scroll
