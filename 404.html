@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page introuvable · Evan Gerdan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --accent: #f0bc0a;
+      --text-muted: rgba(255,255,255,0.48);
+      --border-dark: rgba(255,255,255,0.09);
+      --font: 'Inter', -apple-system, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html, body {
+      height: 100%;
+      font-family: var(--font);
+      background: var(--black);
+      color: var(--white);
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Orbs background */
+    .orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px);
+    }
+    .orb-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(240,188,10,0.14) 0%, transparent 70%);
+      top: -150px; left: -100px;
+      animation: o1 18s ease-in-out infinite alternate;
+    }
+    .orb-2 {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(240,188,10,0.10) 0%, transparent 70%);
+      bottom: -80px; right: -80px;
+      animation: o2 22s ease-in-out infinite alternate;
+    }
+    @keyframes o1 { to { transform: translate(180px, 160px); } }
+    @keyframes o2 { to { transform: translate(-160px, -120px); } }
+
+    /* Grid background */
+    .grid {
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        repeating-linear-gradient(rgba(255,255,255,.03) 0 1px, transparent 1px 80px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 1px, transparent 1px 80px);
+    }
+
+    /* Main */
+    main {
+      position: relative; z-index: 1;
+      height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 0;
+    }
+
+    /* 404 big number */
+    .err-number {
+      font-family: 'Lexend', var(--font);
+      font-size: clamp(7rem, 20vw, 14rem);
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.12);
+      position: relative;
+      user-select: none;
+      margin-bottom: 1.5rem;
+    }
+    .err-number::after {
+      content: '404';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, rgba(240,188,10,0.3) 60%, transparent 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-stroke: 0;
+      animation: glow-flicker 4s ease-in-out infinite alternate;
+    }
+    @keyframes glow-flicker {
+      0%   { opacity: 0.7; }
+      50%  { opacity: 1; }
+      100% { opacity: 0.85; }
+    }
+
+    /* Titles */
+    .err-title {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.9rem;
+      color: var(--white);
+    }
+
+    .err-sub {
+      font-size: clamp(.85rem, 1.5vw, 1rem);
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 480px;
+      margin-bottom: 2.4rem;
+    }
+    .err-sub strong {
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+    }
+
+    /* Buttons */
+    .err-btns {
+      display: flex; flex-wrap: wrap;
+      gap: .85rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-cv {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--accent); color: #0a0a0a;
+      font-size: .88rem; font-weight: 800;
+      padding: .85rem 1.8rem; border-radius: 100px;
+      text-decoration: none;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+      box-shadow: 0 0 0 0 rgba(240,188,10,0);
+    }
+    .btn-cv:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(240,188,10,0.35);
+    }
+
+    .btn-mail {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: transparent; color: var(--white);
+      font-size: .88rem; font-weight: 600;
+      padding: .85rem 1.8rem; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-decoration: none;
+      transition: border-color .25s, background .25s, transform .25s var(--ease);
+    }
+    .btn-mail:hover {
+      border-color: rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-3px);
+    }
+
+    /* Back link */
+    .back-link {
+      font-size: .75rem;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: color .2s;
+      display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .back-link:hover { color: rgba(255,255,255,0.55); }
+    .back-link svg { transition: transform .25s var(--ease); }
+    .back-link:hover svg { transform: translateX(-4px); }
+
+    /* Animated robot */
+    .robot {
+      font-size: 3rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
+      animation: robot-float 3s ease-in-out infinite;
+    }
+    @keyframes robot-float {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50%       { transform: translateY(-10px) rotate(3deg); }
+    }
+
+    /* Entrance animations */
+    .robot, .err-number, .err-title, .err-sub, .err-btns, .back-link {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s var(--ease) forwards;
+    }
+    .err-number { animation-delay: 0.05s; }
+    .err-title  { animation-delay: 0.15s; }
+    .err-sub    { animation-delay: 0.22s; }
+    .err-btns   { animation-delay: 0.3s;  transform: translateY(12px); }
+    .back-link  { animation-delay: 0.38s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0) rotate(0deg); }
+    }
+    .robot { animation: fadeUp 0.6s var(--ease) 0s forwards, robot-float 3s ease-in-out 0.6s infinite; }
+
+    /* Selection */
+    ::selection { background: rgba(240,188,10,0.28); color: #fff; }
+
+    @media (max-width: 480px) {
+      .err-btns { flex-direction: column; align-items: center; }
+      .btn-cv, .btn-mail { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+  <div class="grid"></div>
+
+  <main>
+    <span class="robot">🤖</span>
+    <div class="err-number">404</div>
+    <h1 class="err-title">Page introuvable.</h1>
+    <p class="err-sub">
+      Vous cherchiez sûrement <strong>mon CV</strong> ou <strong>mon adresse e-mail</strong>.<br>
+      Ne repartez pas les mains vides&nbsp;!
+    </p>
+    <div class="err-btns">
+      <a href="mailto:evan-gerdan@outlook.fr" class="btn-cv">
+        ✉️&nbsp; M'envoyer un e-mail
+      </a>
+      <a href="https://awkeyy.github.io/evan-cv/CV-Evan-Gerdan-Style-Doomin.html" target="_blank" class="btn-mail">
+        📥&nbsp; Télécharger mon CV
+      </a>
+    </div>
+    <a href="/" class="back-link">
+      <svg width="13" height="13" viewBox="0 0 20 20" fill="none">
+        <path d="M15.833 10H4.167M10 4.167L4.167 10 10 15.833" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Retour à l'accueil
+    </a>
+  </main>
+</body>
+</html>
