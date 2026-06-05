@@ -763,11 +763,14 @@ a, button { cursor: none; }
    TIMELINE / EXPÉRIENCES
 ═══════════════════════════════════════════════ */
 .timeline {
+  --tl-x: 1rem; /* position de la barre depuis le bord gauche du container */
   position: relative;
-  padding-left: 2rem;
+  padding-left: calc(var(--tl-x) * 2 + 0.5rem);
 }
 .tl-line {
-  position: absolute; left: 0; top: 12px; bottom: 12px;
+  position: absolute;
+  left: var(--tl-x);
+  top: 12px; bottom: 12px;
   width: 1px; background: rgba(255,255,255,.1); overflow: hidden;
 }
 .tl-progress {
@@ -777,7 +780,10 @@ a, button { cursor: none; }
 
 .tl-item { position: relative; margin-bottom: 1.4rem; }
 .tl-dot {
-  position: absolute; left: -2.3rem; top: 1.5rem;
+  position: absolute;
+  /* centre le dot (9px) exactement sur la barre */
+  left: calc(-1 * var(--tl-x) - 0.5rem - 4.5px);
+  top: 1.5rem;
   width: 9px; height: 9px; border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px rgba(240,188,10,.18);
