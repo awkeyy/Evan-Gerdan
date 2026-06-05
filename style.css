@@ -1513,3 +1513,40 @@ footer a:hover { color: rgba(255,255,255,.7); }
 @media (max-width: 768px) {
   .skills-scroll-hint { display: flex; }
 }
+
+/* ═══════════════════════════════════════════════
+   TO TOP BUTTON
+═══════════════════════════════════════════════ */
+#to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 800;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease),
+              transform 0.3s var(--ease),
+              background 0.2s,
+              border-color 0.2s;
+}
+
+#to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+#to-top:hover {
+  background: rgba(240,188,10,0.15);
+  border-color: rgba(240,188,10,0.5);
+  color: var(--accent);
+}
