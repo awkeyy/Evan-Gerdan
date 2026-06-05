@@ -553,3 +553,18 @@ window.addEventListener('load', () => ScrollTrigger.refresh());
     }
   });
 })();
+
+
+/* ── TO TOP ───────────────────────────────────── */
+(function() {
+  const btn = document.getElementById('to-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 100);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
