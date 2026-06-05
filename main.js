@@ -560,9 +560,26 @@ window.addEventListener('load', () => ScrollTrigger.refresh());
   const btn = document.getElementById('to-top');
   if (!btn) return;
 
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 100);
-  }, { passive: true });
+  /* sections à fond clair */
+  const lightSections = document.querySelectorAll('.section-light, .section-interests');
+
+  function updateBtn() {
+    const scrollY = window.scrollY;
+    btn.classList.toggle('visible', scrollY > 100);
+
+    /* détecte si le bouton est au-dessus d'une section claire */
+    const btnRect = btn.getBoundingClientRect();
+    const btnCenterY = btnRect.top + btnRect.height / 2;
+    let onLight = false;
+    lightSections.forEach(sec => {
+      const r = sec.getBoundingClientRect();
+      if (btnCenterY >= r.top && btnCenterY <= r.bottom) onLight = true;
+    });
+    btn.classList.toggle('on-light', onLight);
+  }
+
+  window.addEventListener('scroll', updateBtn, { passive: true });
+  updateBtn();
 
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
