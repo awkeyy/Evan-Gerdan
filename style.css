@@ -1380,28 +1380,21 @@ footer a:hover { color: rgba(255,255,255,.7); }
   display: inline-block;
 }
 
-.hover-card {
-  cursor: pointer;
-}
+.hover-card { cursor: pointer; }
 
 .reference .card {
   position: absolute;
-  bottom: calc(100% + 10px);
+  bottom: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%) scale(0);
   transform-origin: 50% 100%;
-  transition: transform 0.3s cubic-bezier(0.74, -0.03, 0.05, 1.24);
-  width: 160px;
-  height: 95px;
-  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.74, -0.03, 0.05, 1.24),
+              filter 0.3s ease;
+  width: 170px;
+  height: 100px;
   filter: blur(10px);
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 0 0 2px #b0dbbf, 1px 4px 5px 4px #ededed54;
-  padding: 2px;
-  animation-duration: 0.3s;
-  animation-delay: 0.1s;
-  animation-fill-mode: both;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px #b0dbbf, 0 8px 24px rgba(0,0,0,0.18);
   overflow: hidden;
   z-index: 9999;
   pointer-events: none;
@@ -1410,90 +1403,92 @@ footer a:hover { color: rgba(255,255,255,.7); }
 .reference:hover .card {
   transform: translateX(-50%) scale(1);
   filter: blur(0px);
-  animation-name: coolfadeIn;
+  animation: coolfadeIn 0.35s ease both;
   pointer-events: all;
 }
 
 .inner-card {
   position: relative;
-  border-radius: calc(18px - 2%);
-  height: 100%;
-  width: 100%;
-  border: 2px solid #2d2d2d45;
-  background: #daecdd;
+  width: 100%; height: 100%;
+  background: #c8e6c9;
   overflow: hidden;
 }
 
+/* Fond carte stylisé CSS */
 .bg-map {
-  top: 0; left: 0;
-  width: 100%; height: 100%;
   position: absolute;
+  inset: 0;
+  background:
+    /* routes */
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.35) 0px, rgba(255,255,255,0.35) 1px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(0deg,  rgba(255,255,255,0.35) 0px, rgba(255,255,255,0.35) 1px, transparent 1px, transparent 28px),
+    /* fond vert carte */
+    linear-gradient(135deg, #b8ddb8 0%, #c8e6c9 40%, #a5d6a7 100%);
   z-index: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-.card .elements {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* Rivière (Garonne) */
+.bg-map::after {
+  content: '';
+  position: absolute;
+  top: 40%; left: -10%;
+  width: 130%; height: 18px;
+  background: rgba(100,181,246,0.55);
+  border-radius: 50%;
+  transform: rotate(-8deg);
+  filter: blur(2px);
 }
 
-.card .details {
-  z-index: 1;
-  flex: 1;
-  background: #daecdd;
-  filter: blur(6px);
-  margin-bottom: -8%;
+.card .location {
+  position: absolute;
+  top: 38%; left: 54%;
+  width: 14px; height: 14px;
+  background: #1b5e20;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 0 rgba(27,94,32,0.5);
+  animation: pulse 2.5s infinite;
+  z-index: 10;
 }
 
-.card .description {
-  padding: 10px 12px;
-  z-index: 1;
+.card-description {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 8px 12px 9px;
+  background: linear-gradient(to top, rgba(255,255,255,0.95) 70%, transparent);
+  z-index: 5;
 }
 
 .card .main-title {
-  font-size: 1rem;
-  color: #4e8e5b;
+  font-size: .9rem;
+  color: #2e7d32;
   font-weight: 700;
   font-family: var(--font);
+  line-height: 1.2;
 }
 
 .card .second-title {
-  font-size: 0.75rem;
-  color: #5e836b;
+  font-size: .68rem;
+  color: #558b2f;
   font-weight: 500;
   font-family: var(--font);
 }
 
-.card .location {
-  background-color: #226630;
-  top: 28%; left: 58%;
-  z-index: 1000;
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px 7px #c1c1c180;
-  border: 3px solid white;
-  animation: pulse 3s infinite;
-}
-
 .card .cloud {
-  z-index: 1;
   position: absolute;
   border-radius: 50%;
   animation-name: movingClouds;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
+  z-index: 2;
 }
-.card .cloud:nth-child(1) { animation-duration:45s; height:1em; width:1.4em; top:3.5em; left:50%; filter:blur(0.125em) drop-shadow(0.438em 0.188em #ffffffae); background:linear-gradient(to top right,#ffffffae,#ffffffae); }
-.card .cloud:nth-child(2) { animation-duration:30s; top:0.325em; right:-1em; width:4em; height:1.5em; background:#ebebebdb; filter:blur(0.425em); }
-.card .cloud:nth-child(3) { animation-duration:60s; top:2.45em; right:4.938em; width:1em; height:0.5em; background:#fff; filter:blur(0.125em); }
-.card .cloud:nth-child(4) { animation-duration:40s; top:4.45em; right:4.938em; width:1em; height:0.375em; background:#fff; filter:blur(0.125em); }
+.card .cloud:nth-child(2) { animation-duration:45s; height:.8em; width:1.2em; top:1em; left:30%; background:rgba(255,255,255,0.6); filter:blur(3px); }
+.card .cloud:nth-child(3) { animation-duration:30s; top:.3em; right:-1em; width:3em; height:1.2em; background:rgba(235,235,235,0.7); filter:blur(4px); }
+.card .cloud:nth-child(4) { animation-duration:60s; top:1.8em; right:3em; width:.9em; height:.5em; background:rgba(255,255,255,0.8); filter:blur(2px); }
+.card .cloud:nth-child(5) { animation-duration:40s; top:2.8em; left:1em; width:.8em; height:.35em; background:rgba(255,255,255,0.7); filter:blur(2px); }
 
 @keyframes coolfadeIn {
-  0%   { filter: blur(10px); }
-  10%  { filter: blur(20px); }
+  0%   { filter: blur(12px); }
+  10%  { filter: blur(18px); }
   100% { filter: blur(0px);  }
 }
