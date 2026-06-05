@@ -561,7 +561,7 @@ window.addEventListener('load', () => ScrollTrigger.refresh());
   if (!btn) return;
 
   /* sections à fond clair */
-  const lightSections = document.querySelectorAll('.section-light, .section-interests');
+  const lightSections = document.querySelectorAll('.section-light, .section-interests, .stats-section');
 
   function updateBtn() {
     const scrollY = window.scrollY;
