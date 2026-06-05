@@ -1507,3 +1507,9 @@ footer a:hover { color: rgba(255,255,255,.7); }
   color: #ffffff;
   text-shadow: 0 0 12px rgba(240, 188, 10, 0.6);
 }
+
+/* Hint "Défiler" visible uniquement sur mobile */
+.skills-scroll-hint { display: none; }
+@media (max-width: 768px) {
+  .skills-scroll-hint { display: flex; }
+}
