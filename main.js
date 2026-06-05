@@ -589,9 +589,17 @@ window.addEventListener('load', () => ScrollTrigger.refresh());
   /* sections à fond clair */
   const lightSections = document.querySelectorAll('.section-light, .section-interests, .stats-section');
 
+  const pct = document.getElementById('scroll-pct');
+
   function updateBtn() {
     const scrollY = window.scrollY;
-    btn.classList.toggle('visible', scrollY > 100);
+    const visible = scrollY > 100;
+    btn.classList.toggle('visible', visible);
+    if (pct) {
+      pct.classList.toggle('visible', visible);
+      const progress = Math.round(scrollY / (document.body.scrollHeight - window.innerHeight) * 100);
+      pct.textContent = progress + '%';
+    }
 
     /* détecte si le bouton est au-dessus d'une section claire */
     const btnRect = btn.getBoundingClientRect();
@@ -602,6 +610,7 @@ window.addEventListener('load', () => ScrollTrigger.refresh());
       if (btnCenterY >= r.top && btnCenterY <= r.bottom) onLight = true;
     });
     btn.classList.toggle('on-light', onLight);
+    if (pct) pct.classList.toggle('on-light', onLight);
   }
 
   window.addEventListener('scroll', updateBtn, { passive: true });
