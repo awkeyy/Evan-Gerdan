@@ -224,13 +224,39 @@ if (!isTouchDevice) {
 }
 
 /* ─────────────────────────────────────────────────────────
-   3. HEADER — frosted on scroll
+   3. HEADER — smooth grow / shrink on scroll
 ───────────────────────────────────────────────────────── */
 const header = document.getElementById('header');
+const headerInner = header.querySelector('.header-inner');
+let headerScrolled = false;
+
+function setHeaderScrolled(scrolled) {
+  if (headerScrolled === scrolled) return;
+  headerScrolled = scrolled;
+
+  if (scrolled) {
+    header.classList.add('scrolled');
+    gsap.fromTo(headerInner,
+      { scaleX: 1, scaleY: 1 },
+      { scaleX: 0.98, scaleY: 0.97, duration: 0.08, ease: 'power2.in',
+        onComplete: () => gsap.to(headerInner, { scaleX: 1, scaleY: 1, duration: 0.45, ease: 'elastic.out(1, 0.5)' })
+      }
+    );
+  } else {
+    header.classList.remove('scrolled');
+    gsap.fromTo(headerInner,
+      { scaleX: 1, scaleY: 1 },
+      { scaleX: 1.01, scaleY: 1.02, duration: 0.08, ease: 'power2.in',
+        onComplete: () => gsap.to(headerInner, { scaleX: 1, scaleY: 1, duration: 0.5, ease: 'elastic.out(1, 0.45)' })
+      }
+    );
+  }
+}
+
 ScrollTrigger.create({
   start: 'top -80',
-  onEnter:     () => header.classList.add('scrolled'),
-  onLeaveBack: () => header.classList.remove('scrolled'),
+  onEnter:     () => setHeaderScrolled(true),
+  onLeaveBack: () => setHeaderScrolled(false),
 });
 
 /* ─────────────────────────────────────────────────────────
