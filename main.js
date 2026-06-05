@@ -409,8 +409,8 @@ const tlProgress = document.querySelector('.tl-progress');
 if (tlProgress) {
   ScrollTrigger.create({
     trigger: '.timeline',
-    start: 'top 68%',
-    end:   'bottom 68%',
+    start: 'top 50%',
+    end:   'bottom 50%',
     scrub: .8,
     onUpdate(self) {
       tlProgress.style.height = (self.progress * 100) + '%';
@@ -429,7 +429,7 @@ document.querySelectorAll('.tl-item').forEach(item => {
     scrollTrigger: { trigger: item, start: 'top 84%', once: true }
   });
   tl
-    .to(dot, { opacity: 1, scale: 1, x: '-50%', duration: .4, ease: 'back.out(2.5)' })
+    .to(dot, { opacity: 1, scale: 1, duration: .4, ease: 'back.out(2.5)' })
     .fromTo(card,
       { opacity: 0, x: -44 },
       { opacity: 1, x: 0, duration: .75, ease: 'power3.out' },
