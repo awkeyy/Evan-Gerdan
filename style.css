@@ -179,10 +179,10 @@ a, button { cursor: none; }
   z-index: 500;
   padding: 1rem 1.5rem;
   pointer-events: none;
-  transition: padding 1s ease-out;
+  transition: padding 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 #header.scrolled {
-  padding: .6rem 1.5rem;
+  padding: .5rem 1.5rem;
 }
 
 .header-inner {
@@ -191,36 +191,32 @@ a, button { cursor: none; }
   display: flex; align-items: center; gap: 2.5rem;
   border-radius: 100px;
   pointer-events: all;
-
-  /* état initial : transparent */
   background: transparent;
-  box-shadow:
-    0 0 0 1px transparent,
-    0px 0px 0px rgba(0,0,0,0);
+  box-shadow: 0 0 0 1px transparent, 0px 0px 0px rgba(0,0,0,0);
   transition:
-    background 1s ease-out,
-    backdrop-filter 1s ease-out,
-    -webkit-backdrop-filter 1s ease-out,
-    box-shadow 1s ease-out,
-    padding 1s ease-out,
-    gap 1s ease-out,
-    max-width 1s ease-out;
+    background       0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter  0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    -webkit-backdrop-filter 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow       0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    padding          0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    gap              0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    max-width        0.7s  cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius    0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ── Liquid glass — identique au mcshannock pill ── */
+/* ── Liquid glass scrolled ── */
 #header.scrolled .header-inner {
-  background: rgba(0,0,0,0.20);
+  background: rgba(0,0,0,0.22);
   backdrop-filter: blur(60px);
   -webkit-backdrop-filter: blur(60px);
   box-shadow:
     0 0 0 1px rgba(255,255,255,0.10),
-    0px 4px 16px rgba(0,0,0,0.04);
-  padding: .45rem 1.1rem .45rem 1.6rem;
-  max-width: fit-content;   /* pill se resserre autour du contenu */
-  gap: 1.6rem;              /* espace réduit entre logo et nav */
+    0 4px 24px rgba(0,0,0,0.12);
+  padding: .4rem 1rem .4rem 1.5rem;
+  max-width: fit-content;
+  gap: 1.4rem;
 }
 
-/* nav-links : retire le margin-left:auto pour permettre au pill de se resserrer */
 #header.scrolled .nav-links {
   margin-left: 0;
 }
