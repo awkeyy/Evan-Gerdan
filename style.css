@@ -1492,3 +1492,18 @@ footer a:hover { color: rgba(255,255,255,.7); }
   10%  { filter: blur(18px); }
   100% { filter: blur(0px);  }
 }
+
+/* ═══════════════════════════════════════════════
+   TEXT SELECTION
+═══════════════════════════════════════════════ */
+::selection {
+  background: rgba(240, 188, 10, 0.28);
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(240, 188, 10, 0.6);
+}
+
+::-moz-selection {
+  background: rgba(240, 188, 10, 0.28);
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(240, 188, 10, 0.6);
+}
