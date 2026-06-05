@@ -88,7 +88,7 @@ if (!isTouchDevice) {
   /* ── Définition des états ── */
   const STATES = {
     default:     { w:20,  h:20,  bg:'rgba(240,188,10,0.55)', color:'#0a0a0a', r:'50%', border:'none',                           ripple:'rgba(240,188,10,0.5)', html:'' },
-    stats:       { w:54,  h:54,  bg:'#0a0a0a',         color:'#ffffff',    r:'50%',  border:'1.5px solid rgba(255,255,255,.22)', ripple:'rgba(255,255,255,0.5)', html:`<span style="font-size:1.5rem;font-weight:900;line-height:1">+</span>` },
+    stats:       { w:48,  h:48,  bg:'#0a0a0a',         color:'#f0bc0a',    r:'50%',  border:'1.5px solid rgba(240,188,10,.4)', ripple:'rgba(240,188,10,0.5)', html:`<svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="11" width="3" height="7" rx="1" fill="currentColor" opacity=".5"/><rect x="8.5" y="6" width="3" height="12" rx="1" fill="currentColor" opacity=".75"/><rect x="15" y="2" width="3" height="16" rx="1" fill="currentColor"/></svg>` },
     experience:  { w:84,  h:84,  bg:'rgba(0,0,0,0)',   color:'#ffffff',    r:'50%',  border:'1.5px solid rgba(255,255,255,.45)', ripple:'rgba(255,255,255,0.45)',html:`<span style="font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase">EXP</span>` },
     formation:   { w:58,  h:58,  bg:'#ffffff',         color:'#0a0a0a',    r:'13px', border:'none',                            ripple:'rgba(10,10,10,0.35)',   html:`<span style="font-size:2rem;font-weight:900;line-height:1">°</span>` },
     competences: { w:66,  h:66,  bg:'#f0bc0a',         color:'#0a0a0a',    r:'50%',  border:'none',                            ripple:'rgba(240,188,10,0.6)',  html:`<span style="font-size:.9rem;font-weight:900;letter-spacing:-.03em">{/}</span>` },
