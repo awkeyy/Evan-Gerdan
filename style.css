@@ -764,13 +764,10 @@ a, button { cursor: none; }
 ═══════════════════════════════════════════════ */
 .timeline {
   position: relative;
-  padding-left: 0;
+  padding-left: 2rem;
 }
 .tl-line {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 12px; bottom: 12px;
+  position: absolute; left: 0; top: 12px; bottom: 12px;
   width: 1px; background: rgba(255,255,255,.1); overflow: hidden;
 }
 .tl-progress {
@@ -780,14 +777,11 @@ a, button { cursor: none; }
 
 .tl-item { position: relative; margin-bottom: 1.4rem; }
 .tl-dot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scale(0);
-  top: 1.5rem;
+  position: absolute; left: -2.3rem; top: 1.5rem;
   width: 9px; height: 9px; border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px rgba(240,188,10,.18);
-  opacity: 0;
+  opacity: 0; transform: scale(0);
 }
 
 .exp-card {
